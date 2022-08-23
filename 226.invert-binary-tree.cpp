@@ -29,22 +29,16 @@ struct TreeNode
 class Solution
 {
 public:
-    void invertNode(TreeNode *root)
+    TreeNode *invertTree(TreeNode *root)
     {
         if (!root)
         {
-            return;
+            return root;
         }
-        invertNode(root->left);
-        invertNode(root->right);
-        TreeNode *temp = root->left;
-        root->left = root->right;
-        root->right = temp;
-    }
 
-    TreeNode *invertTree(TreeNode *root)
-    {
-        invertNode(root);
+        swap(root->left, root->right);
+        invertTree(root->left);
+        invertTree(root->right);
         return root;
     }
 };
