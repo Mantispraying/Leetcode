@@ -39,8 +39,7 @@ private:
         int left = checkDepth(root->left, diameter);
         int right = checkDepth(root->right, diameter);
 
-        if (left + right > diameter)
-            diameter = abs(left + right);
+        diameter = max(diameter, left + right);
         return max(left, right) + 1;
     }
 
