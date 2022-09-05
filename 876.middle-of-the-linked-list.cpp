@@ -31,12 +31,8 @@ public:
     {
         ListNode *fast = head;
 
-        while (fast)
+        while (fast && fast->next)
         {
-            if (fast->next == NULL)
-            {
-                break;
-            }
             fast = fast->next->next;
             head = head->next;
         }
