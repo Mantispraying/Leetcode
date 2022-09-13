@@ -31,41 +31,32 @@ class Solution
 public:
     vector<vector<int>> levelOrder(TreeNode *root)
     {
+        vector<vector<int>> ans;
         if (!root)
         {
-            return {};
+            return ans;
         }
 
-        vector<vector<int>> ans;
-        ans.push_back({root->val});
-        queue<TreeNode *> curr;
-        curr.push(root);
-        vector<int> vals;
+        queue<TreeNode *> lev;
+        lev.push(root);
 
-        while (!curr.empty())
+        while (!lev.empty())
         {
-            queue<TreeNode *> temp;
-            vals.clear();
-            while (!curr.empty())
+            vector<int> temp;
+            int n = lev.size();
+            for (int i = 0; i < n; i++)
             {
-                if (curr.front()->left)
-                {
-                    temp.push(curr.front()->left);
-                    vals.push_back(curr.front()->left->val);
-                }
-                if (curr.front()->right)
-                {
-                    temp.push(curr.front()->right);
-                    vals.push_back(curr.front()->right->val);
-                }
-                curr.pop();
+                temp.push_back(lev.front()->val);
+                if (lev.front()->left)
+                    lev.push(lev.front()->left);
+                if (lev.front()->right)
+                    lev.push(lev.front()->right);
+
+                lev.pop();
             }
-            if (!vals.empty())
-            {
-                ans.push_back(vals);
-            }
-            curr = temp;
+            ans.push_back(temp);
         }
+
         return ans;
     }
 };
