@@ -70,10 +70,8 @@ public:
         if (!node)
             return node;
 
-        // unordered_map<Node *, Node *> visited;
-        // return createNode(node, visited);
-
-        
+        unordered_map<Node *, Node *> visited;
+        return createNode(node, visited);
     }
 };
 // @lc code=end
