@@ -12,7 +12,7 @@ class Solution
 public:
     int maxProfit(vector<int> &prices)
     {
-        int maxp = 0;
+        int maxd = 0;
         int minp = INT_MAX;
 
         for (int i = 0; i < prices.size(); i++)
@@ -21,12 +21,12 @@ public:
             {
                 minp = prices[i];
             }
-            else if (prices[i] - minp > maxp)
+            else if (prices[i] - minp > maxd)
             {
-                maxp = prices[i] - minp ;
+                maxd = prices[i] - minp;
             }
         }
-        return maxp;
+        return maxd;
     }
 };
 // @lc code=end
