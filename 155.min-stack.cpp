@@ -9,25 +9,73 @@ using namespace std;
 // @lc code=start
 class MinStack
 {
+private:
+    long long mini;
+    stack<long long> stk;
+
 public:
     MinStack()
     {
+        mini = LLONG_MAX;
+        while (!stk.empty())
+        {
+            stk.pop();
+        }
     }
 
-    void push(int val)
+    void push(long long val)
     {
+        if (stk.empty())
+        {
+            stk.push(val);
+            mini = val;
+        }
+        else if (val < mini)
+        {
+            stk.push(2 * val * 1LL - mini);
+            mini = val;
+        }
+        else
+        {
+            stk.push(val);
+        }
     }
 
     void pop()
     {
+        if (stk.empty())
+        {
+            return;
+        }
+        long long temp = stk.top();
+        stk.pop();
+        if (temp < mini)
+        {
+            mini = 2 * mini - temp;
+        }
     }
 
     int top()
     {
+        if (stk.empty())
+        {
+            return NULL;
+        }
+        long long temp = stk.top();
+        if (temp < mini)
+        {
+            return mini;
+        }
+        return temp;
     }
 
     int getMin()
     {
+        if (stk.empty())
+        {
+            return NULL;
+        }
+        return mini;
     }
 };
 
