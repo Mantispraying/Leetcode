@@ -1,2 +1,2 @@
 # leetcode
-Solutions to solved leetcode problems in C++
+Solutions to solved leetcode problems
