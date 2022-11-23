@@ -32,8 +32,7 @@ private:
         }
 
         int ans = min(take, notTake);
-        dp[idx][amount] = ans;
-        return ans;
+        return dp[idx][amount] = ans;
     }
 
 public:

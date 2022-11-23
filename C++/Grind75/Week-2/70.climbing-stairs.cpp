@@ -66,14 +66,14 @@ public:
     {
 
         // matrix exponentiation
-        vector<vector<int>> a = {{1, 1}, {1, 0}};
-        vector<vector<int>> ans = matrixExpo(a, n);
+        // vector<vector<int>> a = {{1, 1}, {1, 0}};
+        // vector<vector<int>> ans = matrixExpo(a, n);
 
-        return ans[0][0];
+        // return ans[0][0];
 
         // Recursive Memoization
-        // vector<int> dp(n + 1, -1);
-        // return count(n, dp);
+        vector<int> dp(n + 1, -1);
+        return count(n, dp);
 
         // Iterative tabulation
         // int a = 1, b = 1;
