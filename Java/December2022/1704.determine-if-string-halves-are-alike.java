@@ -1,3 +1,4 @@
+package December2022;
 import java.util.*;
 /*
  * @lc app=leetcode id=1704 lang=java
