@@ -1,3 +1,5 @@
+package Grind75.Week1;
+
 import java.util.*;
 /*
  * @lc app=leetcode id=1 lang=java
