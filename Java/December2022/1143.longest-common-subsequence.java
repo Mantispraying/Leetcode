@@ -1,3 +1,5 @@
+package December2022;
+
 /*
  * @lc app=leetcode id=1143 lang=java
  *
