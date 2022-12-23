@@ -1,4 +1,5 @@
 package Grind75.Week1;
+
 /*
  * @lc app=leetcode id=125 lang=java
  *
