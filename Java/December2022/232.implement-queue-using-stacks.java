@@ -51,15 +51,3 @@ class MyQueue {
  * boolean param_4 = obj.empty();
  */
 // @lc code=end
-class Test {
-    public static void main(String[] args) {
-        MyQueue q = new MyQueue();
-        q.push(1);
-        q.push(2);
-        System.out.println(q.peek());
-        System.out.println(q.pop());
-        System.out.println(q.peek());
-        System.out.println(q.pop());
-        System.out.println(q.empty());
-    }
-}
