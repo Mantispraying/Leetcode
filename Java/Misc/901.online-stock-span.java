@@ -1,3 +1,5 @@
+package Misc;
+
 import java.util.*;
 /*
  * @lc app=leetcode id=901 lang=java
