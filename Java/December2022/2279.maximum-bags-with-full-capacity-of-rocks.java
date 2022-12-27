@@ -1,3 +1,5 @@
+package December2022;
+
 import java.util.*;
 /*
  * @lc app=leetcode id=2279 lang=java
@@ -25,5 +27,4 @@ class Solution {
         return ans;
     }
 }
-
 // @lc code=end
