@@ -14,16 +14,15 @@ class Solution {
         String[] words = s.split(" ");
         if (words.length != pattern.length())
             return false;
-        Map<Character, String> idx = new HashMap<>();
+        Map<Character, String> map = new HashMap<>();
         for (int i = 0; i < words.length; i++) {
-            char c = pattern.charAt(i);
-            if (idx.containsKey(c)) {
-                if (!idx.get(c).equals(words[i]))
+            if (map.containsKey(pattern.charAt(i))) {
+                if (!map.get(pattern.charAt(i)).equals(words[i]))
                     return false;
             } else {
-                if (idx.containsValue(words[i]))
+                if (map.containsValue(words[i]))
                     return false;
-                idx.put(c, words[i]);
+                map.put(pattern.charAt(i), words[i]);
             }
         }
         return true;

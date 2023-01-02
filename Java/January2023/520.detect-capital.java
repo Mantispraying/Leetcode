@@ -27,9 +27,3 @@ class Solution {
 }
 
 // @lc code=end
-class Test {
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-        sol.detectCapitalUse("USA");
-    }
-}
