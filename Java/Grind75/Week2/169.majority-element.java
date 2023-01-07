@@ -8,19 +8,16 @@ package Grind75.Week2;
 // @lc code=start
 class Solution {
     public int majorityElement(int[] nums) {
-        int mostOcc = 0, freq = 0;
-        for (int num : nums) {
-            if (freq == 0) {
-                mostOcc = num;
-                freq++;
-                continue;
-            }
-            if (num == mostOcc)
-                freq++;
+        int majorityElement = 0, count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (count == 0)
+                majorityElement = nums[i];
+            if (nums[i] == majorityElement)
+                count++;
             else
-                freq--;
+                count--;
         }
-        return mostOcc;
+        return majorityElement;
     }
 }
 // @lc code=end
