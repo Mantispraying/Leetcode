@@ -22,11 +22,3 @@ class Solution {
 }
 
 // @lc code=end
-class Test {
-    public static void main(String[] args) {
-        Solution sol = new Solution();
-        int[] gas = { 3, 4, 5, 1, 2 };
-        int[] cost = { 1, 2, 3, 4, 5 };
-        System.out.println(sol.canCompleteCircuit(gas, cost));
-    }
-}
