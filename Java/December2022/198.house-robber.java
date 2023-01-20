@@ -10,17 +10,15 @@ import java.util.*;
 
 // @lc code=start
 class Solution {
-    public int checkHouse(int[] nums, int[] dp, int pos) {
-        if (pos >= nums.length)
+    private int checkHouse(int[] nums, int[] dp, int idx) {
+        if (idx >= nums.length)
             return 0;
-        if (dp[pos] != -1)
-            return dp[pos];
-        return dp[pos] = Math.max(checkHouse(nums, dp, pos + 1), nums[pos] + checkHouse(nums, dp, pos + 2));
+        if (dp[idx] != -1)
+            return dp[idx];
+        return dp[idx] = Math.max(checkHouse(nums, dp, idx + 2) + nums[idx], checkHouse(nums, dp, idx + 1));
     }
 
     public int rob(int[] nums) {
-        if (nums.length == 1)
-            return nums[0];
         int[] dp = new int[nums.length];
         Arrays.fill(dp, -1);
         return checkHouse(nums, dp, 0);
