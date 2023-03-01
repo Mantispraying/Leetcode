@@ -1,4 +1,4 @@
-package January2023;
+package February2023;
 
 /*
  * @lc app=leetcode id=567 lang=java
