@@ -42,7 +42,7 @@ class Solution {
                     break;
             }
         }
-        return (stk.pop());
+        return (stk.peek());
     }
 }
 // @lc code=end
