@@ -9,14 +9,14 @@ import java.util.*;
 // @lc code=start
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> cMap = new HashMap<>();
+        Set<Character> set = new HashSet<>();
         int max = 0, l = 0, r = 0, length = s.length();
         while (r < length) {
-            while (cMap.containsKey(s.charAt(r))) {
-                cMap.remove(s.charAt(l));
+            while (set.contains(s.charAt(r))) {
+                set.remove(s.charAt(l));
                 l++;
             }
-            cMap.put(s.charAt(r), r);
+            set.add(s.charAt(r));
             r++;
             max = Math.max(max, r - l);
         }
